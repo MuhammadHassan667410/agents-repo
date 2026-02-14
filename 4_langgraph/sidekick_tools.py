@@ -27,7 +27,7 @@ async def playwright_tools():
 
 def push(text: str):
     """Send a push notification to the user"""
-    requests.post(pushover_url, data = {"token": pushover_token, "user": pushover_user, "message": text})
+    requests.post(pushover_url, data = {"token": pushover_token, "user": pushover_user, "message": text}, timeout=10)
     return "success"
 
 

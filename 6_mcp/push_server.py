@@ -23,7 +23,7 @@ def push(args: PushModelArgs):
     """Send a push notification with this brief message"""
     print(f"Push: {args.message}")
     payload = {"user": pushover_user, "token": pushover_token, "message": args.message}
-    requests.post(pushover_url, data=payload)
+    requests.post(pushover_url, data=payload, timeout=10)
     return "Push notification sent"
 
 
